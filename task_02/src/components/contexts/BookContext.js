@@ -9,15 +9,15 @@ function booksReducer(books, action)
         {
             return [
                 ...books,
-                action.newBook
+                action.payload
             ];
         }
         case ACTION_TYPES.EDIT:
         {
             return books.map(book => {
-                if (book.id === action.targetBook.id)
+                if (book.id === action.payload.id)
                 {
-                    return action.targetBook;
+                    return action.payload;
                 }
                 else
                 {
@@ -27,7 +27,7 @@ function booksReducer(books, action)
         }
         case ACTION_TYPES.DELETE:
         {
-            return books.filter(book => book.id !== action.id);
+            return books.filter(book => book.id !== action.payload);
         }
         default:
         {

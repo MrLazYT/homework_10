@@ -1,13 +1,15 @@
 import './App.css';
 import BookList from './components/BookList';
-import BookContextProvider from './components/contexts/BookContext';
+import { Routes, Route } from 'react-router-dom';
+import EditBook from './components/EditBook';
 
 function App() {
   return (
     <div className="App">
-      <BookContextProvider>
-        <BookList />
-      </BookContextProvider>
+      <Routes>
+        <Route path='/' element={<BookList/>} />
+        <Route path='/:id/edit' element={<EditBook/>} />
+      </Routes>
     </div>
   );
 }
