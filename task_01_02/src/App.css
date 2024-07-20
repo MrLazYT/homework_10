@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+* {
+  color: #E7EAF3;
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+body {
+  height: 100%;
+  background-color: #090E1B;
+}
+
+div {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #111522;
+  text-align: center;
+}
+
+div.add-task-container {
+  margin: 0px;
+  padding: 0px;
+}
+
+p {
+  display: inline-block;
+  min-width: 250px;
+  white-space: nowrap;
+}
+
+input {
+  width: 250px;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  color: #111522;
+  background-color: #94A7E0;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #090E1B;
+}
+
+input[type=checkbox] {
+  width: auto;
+}
+
+button {
+  margin: 5px;
+  padding: 10px;
+  background-color: #1F3C93;
+  border: none;
+  border-radius: 7px;
+}
+
+ul {
+  list-style-type: none;
+}
