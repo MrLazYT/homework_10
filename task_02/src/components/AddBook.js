@@ -1,19 +1,25 @@
 import { useContext, useState } from "react";
 import { BookContext } from "./contexts/BookContext";
-import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-export default function EditBook()
+export default function AddBook()
 {
-    const { books, editBook } = useContext(BookContext);
-    const { id } = useParams();
-    const targetBook = books.find(book => book.id === +id);
-    const [book, setBook] = useState(targetBook);
+    const [book, setBook] = useState({
+        id: 0,
+        title: "",
+        author: "",
+        genre: "",
+        year: 0,
+        pages: 0,
+        taken: false
+    });
+
+    const { addBook } = useContext(BookContext);
     const navigate = useNavigate();
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        editBook(book);
+        addBook(book);
         navigate("/");
     }
 
@@ -53,9 +59,9 @@ export default function EditBook()
     }
 
     return (
-        <>
+        <div>
             <form onSubmit={onSubmitHandler}>
-                <h2>Edit Book</h2>
+                <h2>Add Book</h2>
 
                 <div className="input-container">
                     <label>Title</label>
@@ -84,6 +90,6 @@ export default function EditBook()
 
                 <button type="submit">Save</button>
             </form>
-        </>
+        </div>
     );
 }
